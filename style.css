@@ -1,0 +1,253 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #8b0000;
+    filter: blur(180px);
+    opacity: 0.16;
+    top: -200px;
+    right: -150px;
+    z-index: -1;
+}
+
+.background-stars {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #b58b8b;
+    opacity: 0.5;
+    letter-spacing: 20px;
+    pointer-events: none;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+    width: 90%;
+    max-width: 750px;
+    min-height: 650px;
+    padding: 45px 30px;
+    background: rgba(20, 20, 20, 0.85);
+    border: 1px solid #383030;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(130, 0, 0, 0.12);
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* PAGES */
+
+.page {
+    display: none;
+    animation: appear 0.7s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TEXT */
+
+.small-title {
+    color: #c45b5b;
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 7vw, 65px);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+h1 span {
+    color: #c83232;
+}
+
+h2 {
+    color: #b8b8b8;
+    font-size: 13px;
+    letter-spacing: 5px;
+    margin: 15px 0 30px;
+}
+
+.description {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 2;
+    max-width: 450px;
+    margin: 0 auto 30px;
+}
+
+/* DECORATIONS */
+
+.maple {
+    font-size: 65px;
+    margin: 30px;
+    animation: float 3s infinite ease-in-out;
+}
+
+.goat {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: #d33b3b;
+    font-weight: bold;
+    letter-spacing: 10px;
+    margin: 35px 0;
+    text-shadow: 0 0 25px #850000;
+}
+
+.token {
+    font-size: 65px;
+    margin: 25px;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* BUTTONS */
+
+button {
+    background: #9e2020;
+    color: white;
+    border: 1px solid #d34b4b;
+    padding: 13px 30px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #d32f2f;
+    transform: scale(1.06);
+    box-shadow: 0 0 20px rgba(211, 47, 47, 0.4);
+}
+
+/* BIRTHDAY LETTER */
+
+.letter {
+    max-width: 500px;
+    margin: 25px auto;
+    padding: 25px;
+    background: #141414;
+    border: 1px solid #493030;
+    border-radius: 12px;
+    text-align: left;
+    color: #c4c4c4;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.letter p {
+    margin-bottom: 17px;
+}
+
+.letter strong {
+    color: #e34b4b;
+}
+
+/* FOOTER */
+
+.footer {
+    margin-top: 35px;
+    color: #777;
+    font-size: 11px;
+}
+
+/* NAVIGATION */
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 45px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.navigation span {
+    color: #888;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.nav-button {
+    padding: 9px 20px;
+    font-size: 11px;
+}
+
+.nav-button:disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+    .container {
+        padding: 35px 18px;
+        min-height: 600px;
+    }
+
+    .small-title {
+        letter-spacing: 3px;
+    }
+
+    .letter {
+        padding: 18px;
+    }
+
+    .goat {
+        font-size: 35px;
+    }
+}
